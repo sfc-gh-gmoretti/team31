@@ -1,8 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="snowflake-source" content="cortex-agent-authored">
 <title>Discovery · Sarah Mitchell</title>
 <script type="application/json" id="snowflake-report-metadata">
@@ -12,25 +10,26 @@
   "dataSources": [
     {
       "type": "document",
-      "source": "aldwych_se_briefing.pdf, Office of the CFO Outcome Selling Playbook.PDF, Selling to the Office of the CFO - Field Enablement.PDF"
+      "source": "aldwych_se_briefing.pdf; Office of the CFO Outcome Selling Playbook.PDF; Selling to the Office of the CFO - Field Enablement.PDF"
     }
   ],
-  "producerNotes": "Static discovery sheet authored from the three briefing PDFs. No live query; refresh by re-reading the source PDFs."
+  "producerNotes": "Static discovery sheet authored from the three briefing PDFs; revised after two review passes (Basel IV added, ring-fencing wording corrected, lineage claims flagged to-validate, play-back template + carry-forward added). No live query."
 }
 </script>
 <style>
-:root { color-scheme: light dark; --card: light-dark(#ffffff,#111827); --line: light-dark(#e5e7eb,#374151); --muted: light-dark(#6b7280,#9ca3af); }
+:root { color-scheme: light dark; --card: light-dark(#ffffff,#111827); --line: light-dark(#e5e7eb,#374151); --muted: light-dark(#6b7280,#9ca3af); --tv:#b45309; }
 * { box-sizing: border-box; }
-body { font-family: -apple-system, system-ui, Segoe UI, Roboto, sans-serif; max-width: 880px; width:100%; margin:0 auto; padding: clamp(16px,4vw,28px); line-height:1.5; color: light-dark(#1f2937,#e5e7eb); background: light-dark(#f8fafc,#0b1220); }
+body { font-family: -apple-system, system-ui, Segoe UI, Roboto, sans-serif; max-width: 900px; width:100%; margin:0 auto; padding: clamp(16px,4vw,28px); line-height:1.5; color: light-dark(#1f2937,#e5e7eb); background: light-dark(#f8fafc,#0b1220); }
 a { color: light-dark(#2563eb,#60a5fa); }
 .nav { font-size:13px; margin-bottom:18px; }
 .nav a { margin-right:12px; text-decoration:none; }
-.hdr { border-left:8px solid var(--accent); padding:14px 18px; border-radius:10px; background:var(--card); border:1px solid var(--line); border-left-width:8px; margin-bottom:20px; }
+.hdr { border:1px solid var(--line); border-left:8px solid var(--accent); padding:14px 18px; border-radius:10px; background:var(--card); margin-bottom:20px; }
 .hdr .letter { display:inline-block; width:30px; height:30px; line-height:30px; text-align:center; border-radius:50%; background:var(--accent); color:#fff; font-weight:700; margin-right:8px; }
 .hdr h1 { margin:6px 0 2px; font-size:24px; }
 .hdr .role { color:var(--muted); font-size:14px; }
 .hdr .tag { display:inline-block; margin-top:8px; font-size:12px; font-weight:600; color:var(--accent); background:light-dark(#f1f5f9,#1f2937); padding:3px 10px; border-radius:999px; }
 h2 { font-size:16px; text-transform:uppercase; letter-spacing:.04em; margin:26px 0 10px; color: light-dark(#0f172a,#f1f5f9); border-bottom:2px solid var(--accent); padding-bottom:4px; }
+h3 { font-size:14px; margin:16px 0 6px; }
 .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px; }
 .opener { font-style:italic; border-left:4px solid var(--accent); }
 .q { margin:10px 0; padding:10px 12px; border:1px solid var(--line); border-radius:8px; background:var(--card); }
@@ -38,10 +37,14 @@ h2 { font-size:16px; text-transform:uppercase; letter-spacing:.04em; margin:26px
 .q .txt { margin:3px 0; font-weight:600; }
 .q .listen { font-size:13px; color:var(--muted); }
 .q .listen b { color:var(--accent); font-weight:600; }
-.star::before { content:"★ "; color:var(--accent); }
+.star::before { content:"\2605 "; color:var(--accent); }
 .badge { display:inline-block; font-size:10px; font-weight:700; color:#fff; background:var(--accent); border-radius:4px; padding:1px 6px; margin-left:6px; vertical-align:middle; }
+.badge.tv { background:var(--tv); }
 .callout { background:light-dark(#fffbeb,#1f2937); border:1px solid var(--accent); border-radius:10px; padding:12px 16px; }
 .callout .lead { font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); }
+.playback { background:light-dark(#eff6ff,#0f1e33); border:1px dashed var(--accent); border-radius:10px; padding:12px 16px; font-style:italic; }
+.carry { background:light-dark(#f0fdf4,#0f1f17); border:1px solid var(--line); border-left:4px solid #16a34a; border-radius:8px; padding:10px 14px; font-size:14px; }
+.tvnote { color:var(--tv); font-weight:600; font-size:13px; }
 .table-wrap { overflow-x:auto; }
 table { border-collapse:collapse; width:100%; }
 th,td { border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top; font-size:14px; }
@@ -50,46 +53,45 @@ ul.exit { list-style:none; padding:0; }
 ul.exit li { padding:6px 0 6px 26px; position:relative; border-bottom:1px dashed var(--line); }
 ul.exit li::before { content:"\2610"; position:absolute; left:0; color:var(--accent); font-size:18px; line-height:1; }
 .debrief { font-size:14px; }
+.pill { display:inline-block; font-size:11px; font-weight:700; color:#fff; background:var(--accent); border-radius:999px; padding:2px 10px; margin-right:6px; }
 footer { margin-top:30px; font-size:12px; color:var(--muted); border-top:1px solid var(--line); padding-top:10px; }
-@media print { body { background:#fff; } .nav { display:none; } .card,.q,.callout,.hdr { break-inside:avoid; } }
+@media print { body { background:#fff; } .nav { display:none; } .card,.q,.callout,.hdr,.playback,.carry { break-inside:avoid; } }
 
-:root { --accent: #dc2626; }
-.hdr { --accent:#dc2626; }
-</style>
-</head>
-<body>
-<div class="nav"><a href="index.html">&larr; All sheets</a><a href="01-james-obrien.html">O&#x27;Brien</a><a href="03-charlotte-davies.html">Davies</a><a href="04-priya-mehta.html">Mehta</a><a href="05-marcus-okafor.html">Okafor</a><a href="06-david-chen.html">Chen</a></div>
-<div class="hdr">
-  <div><span class="letter">B</span><span class="tag">Business owner · economic sponsor</span></div>
-  <h1>Sarah Mitchell</h1>
-  <div class="role">Chief Risk Officer</div>
-</div>
+:root { --accent: #dc2626; }</style>
+</head><body>
+<div class="nav"><a href="index.html">&larr; All sheets</a><a href="01-james-obrien.html">O&#x27;Brien</a><a href="03-charlotte-davies.html">Davies</a><a href="04-priya-mehta.html">Mehta</a><a href="05-marcus-okafor.html">Okafor</a><a href="06-david-chen.html">Chen</a><a href="07-andrew-harper.html"><b>CFO &starf;</b></a></div>
+<div class="hdr"><div><span class="letter">B</span><span class="tag">Business owner · economic sponsor</span></div>
+<h1>Sarah Mitchell</h1><div class="role">Chief Risk Officer</div></div>
 
 <h2>Meeting objective</h2>
-<div class="card">Establish the cost-of-inaction outcome and win Sarah as an active sponsor, not just a budget approver. She holds an approved remediation budget she can&#x27;t spend and a self-service pilot she had to pause — recover both as intelligence.</div>
+<div class="card">Establish the cost-of-inaction outcome and win Sarah as an active sponsor, not just a budget approver. She holds an approved remediation budget she can&#x27;t spend and a self-service pilot she had to pause — recover both as intelligence, and quantify the exposure.</div>
 
 <h2>Credibility opener &mdash; say first</h2>
-<div class="card opener">&ldquo;The FCA formal notice and the BCBS 239 finding land on your desk, and our understanding is you have remediation budget approved but stuck. We&#x27;d like to understand what&#x27;s really blocking it and what &#x27;compliant by Q4&#x27; has to look like — then show you where a governed platform actually moves that, rather than pitch you features.&rdquo;</div>
+<div class="card opener">&ldquo;The FCA formal notice and the BCBS 239 finding land on your desk, and our understanding is you have remediation budget approved but stuck. We&#x27;d like to understand what&#x27;s really blocking it, what &#x27;compliant by Q4&#x27; has to look like, and what the exposure is under Basel IV — then show you where a governed platform actually moves that, rather than pitch features.&rdquo;</div>
 
-<h2>Discovery questions &mdash; pick 5&ndash;7, lead with ★</h2>
-<div class="q"><div class="grp">Budget</div><div class="txt star">The remediation budget is approved but stuck — what&#x27;s actually blocking you from spending it?<span class="badge">LEAD</span></div><div class="listen"><b>Listen for:</b> Architecture uncertainty? CTO sign-off? Vendor choice?</div></div><div class="q"><div class="grp">The pilot</div><div class="txt star">You piloted a self-service analytics tool and had to pause it — what did it prove, and why did it stop?<span class="badge">LEAD</span></div><div class="listen"><b>Listen for:</b> Hidden intel; what she&#x27;s already convinced of.</div></div><div class="q"><div class="grp">The cycle</div><div class="txt">Walk us through the three-week monthly regulatory cycle — where do the weeks actually go?</div><div class="listen"><b>Listen for:</b> The manual choke points to collapse.</div></div><div class="q"><div class="grp">Compliance</div><div class="txt star">For the Q4 BCBS 239 deadline, what specifically does the FCA count as compliant — calculation-level lineage across all seven systems?<span class="badge">LEAD</span></div><div class="listen"><b>Listen for:</b> The definition of done.</div></div><div class="q"><div class="grp">Cost of inaction</div><div class="txt star">If non-compliance continues, what&#x27;s the exposure — capital add-on, penalty, business restriction?<span class="badge">LEAD</span></div><div class="listen"><b>Listen for:</b> The number that dwarfs platform cost.</div></div><div class="q"><div class="grp">Buyer path</div><div class="txt">Who has to sign to release the budget — Marcus, Andrew?</div><div class="listen"><b>Listen for:</b> The economic-buyer path to the CFO.</div></div>
+<h2>Discovery questions &mdash; pick 5&ndash;7, lead with &starf;</h2>
+<p class="tvnote">&starf; LEAD = ask first &nbsp;·&nbsp; <span style="color:var(--tv)">TO VALIDATE</span> = rests on inference, confirm don't assume</p>
+<div class="q"><div class="grp">Budget</div><div class="txt star">The remediation budget is approved but stuck — what&#x27;s actually blocking you from spending it?<span class="badge">LEAD</span><span class="badge tv">TO VALIDATE</span></div><div class="listen"><b>Listen for:</b> Architecture uncertainty? CTO sign-off? Vendor choice?</div></div><div class="q"><div class="grp">The pilot</div><div class="txt star">You piloted a self-service analytics tool and had to pause it — what did it prove, and why did it stop?<span class="badge">LEAD</span><span class="badge tv">TO VALIDATE</span></div><div class="listen"><b>Listen for:</b> Hidden intel; what she&#x27;s already convinced of.</div></div><div class="q"><div class="grp">Capital / Basel IV</div><div class="txt star">Under Basel IV, does the lack of traceable, unified risk data force conservative RWA assumptions or a Pillar 2 add-on — what is that costing you in tied-up capital?<span class="badge">LEAD</span></div><div class="listen"><b>Listen for:</b> Turns lineage into a capital number for the CFO.</div></div><div class="q"><div class="grp">The cycle</div><div class="txt">Walk us through the three-week monthly regulatory cycle — where do the weeks actually go, and where&#x27;s the &#x27;no unified customer risk view&#x27; hurting most?</div><div class="listen"><b>Listen for:</b> The manual choke points to collapse.</div></div><div class="q"><div class="grp">Compliance</div><div class="txt star">For the Q4 BCBS 239 deadline, what specifically does the FCA count as compliant — traceability to source-record calculations across all seven systems?<span class="badge">LEAD</span></div><div class="listen"><b>Listen for:</b> The definition of done.</div></div><div class="q"><div class="grp">Buyer path</div><div class="txt">Who has to sign to release the budget — Marcus, Andrew?<span class="badge tv">TO VALIDATE</span></div><div class="listen"><b>Listen for:</b> The economic-buyer path to the CFO.</div></div>
+
+<h2>Play back before you leave</h2>
+<div class="playback">&ldquo;So the priority is trusted regulatory reporting and BCBS 239 compliance by Q4; today it&#x27;s a three-week manual cycle across seven systems with no unified risk view; you own it, the consequence is the FCA notice plus Basel IV capital drag, and it matters now because the deadline is fixed. Is that accurate?&rdquo;</div>
 
 <h2>The one takeaway to land</h2>
-<div class="callout"><div class="lead">Leave them believing</div>&ldquo;Snowflake unblocks your approved budget and makes regulatory submissions self-service, against the FCA deadline.&rdquo;
-<p style="margin:8px 0 0"><b>What to show:</b> Show governed self-service regulatory reporting and calculation-level lineage — the pattern that turns the three-week cycle into days and satisfies the finding.</p></div>
+<div class="callout"><div class="lead">Leave them believing</div>&ldquo;Snowflake unblocks your approved budget and makes regulatory submissions self-service — against the FCA deadline and Basel IV pressure.&rdquo;
+<p style="margin:8px 0 0"><b>What to show (capability mapped):</b> A governed self-service regulatory-reporting app (Streamlit) over a single risk model, with a Horizon lineage graph behind each figure — the three-week cycle collapsed toward days. Present the speed proof (e.g. earnings ~2 weeks → 48 hours) as an operating example, not a guarantee.</p></div>
 
 <h2>Objections &amp; responses</h2>
-<div class="table-wrap"><table>
-<thead><tr><th style="width:38%">If they push back&hellip;</th><th>Respond</th></tr></thead>
-<tbody><tr><td>Does the &#x27;fix&#x27; actually resolve the compliance requirement?</td><td>Calculation-level lineage via Horizon satisfies BCBS 239 Principle 3 — traceable to source record, not just table-level. We&#x27;ll prove that detail with Charlotte so your recommendation is defensible.</td></tr><tr><td>We already tried a tool and had to pause it.</td><td>That tells us the appetite is real — the question is whether it was a point tool on a fragmented foundation. A governed platform makes self-service safe rather than another silo.</td></tr></tbody>
-</table></div>
+<div class="table-wrap"><table><thead><tr><th style="width:36%">If they push back&hellip;</th><th>Respond</th></tr></thead>
+<tbody><tr><td>Does the &#x27;fix&#x27; actually resolve the compliance requirement?</td><td>Horizon gives object- and column-level lineage natively; combined with the modelled transformations (dbt / dynamic tables) you get traceability down to the source-record calculation. Whether that fully clears the FCA&#x27;s exact bar is something we&#x27;ll pressure-test with Charlotte — to validate, not assert.</td></tr><tr><td>We already tried a tool and had to pause it.</td><td>That tells us the appetite is real — the question is whether it was a point tool on a fragmented foundation. A governed platform makes self-service safe rather than another silo.</td></tr></tbody></table></div>
+
+<h2>Carry forward</h2>
+<div class="carry">Feed Sarah&#x27;s definition of &#x27;compliant&#x27; and the capital/labour numbers straight into the CFO value model. Take the paused-pilot lesson into Priya (self-service AI) and David (pipelines). Confirm the budget-release signature path against what James said.</div>
 
 <h2>Exit criteria &mdash; don't leave without</h2>
-<div class="card"><ul class="exit"><li>Why the budget is stuck</li><li>What the paused pilot proved</li><li>The FCA&#x27;s definition of &#x27;compliant&#x27;</li><li>Cost-of-inaction exposure (a number)</li><li>The sign-off path to release funds</li><li>Her sponsorship for the CFO meeting</li></ul></div>
+<div class="card"><ul class="exit"><li>Why the budget is stuck</li><li>What the paused pilot proved</li><li>The FCA&#x27;s definition of &#x27;compliant&#x27;</li><li>Basel IV capital exposure + reporting-labour cost (numbers)</li><li>The sign-off path to release funds</li><li>Her sponsorship for the CFO meeting</li></ul></div>
 
 <h2>Out-of-role debrief question (the 5 min after)</h2>
-<div class="card debrief">&ldquo;Did we sound like we understood a CRO&#x27;s regulatory reality — and would you have named us as the fix to Andrew on that conversation?&rdquo;</div>
+<div class="card debrief">&ldquo;Did we sound like we understood a CRO&#x27;s regulatory and capital reality — and would you have named us as the fix to Andrew on that conversation?&rdquo;</div>
 
 <footer>Aldwych Bank &middot; CFO Challenge &middot; persona discovery sheet 2 of 6. Scored 0&ndash;3 on: lead with credibility &middot; discovery &middot; customise to persona &middot; capability mapped to challenge &middot; objection handling.</footer>
-</body>
-</html>
+</body></html>

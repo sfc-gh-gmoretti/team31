@@ -1,8 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="snowflake-source" content="cortex-agent-authored">
 <title>Discovery · Marcus Okafor</title>
 <script type="application/json" id="snowflake-report-metadata">
@@ -12,25 +10,26 @@
   "dataSources": [
     {
       "type": "document",
-      "source": "aldwych_se_briefing.pdf, Office of the CFO Outcome Selling Playbook.PDF, Selling to the Office of the CFO - Field Enablement.PDF"
+      "source": "aldwych_se_briefing.pdf; Office of the CFO Outcome Selling Playbook.PDF; Selling to the Office of the CFO - Field Enablement.PDF"
     }
   ],
-  "producerNotes": "Static discovery sheet authored from the three briefing PDFs. No live query; refresh by re-reading the source PDFs."
+  "producerNotes": "Static discovery sheet authored from the three briefing PDFs; revised after two review passes (Basel IV added, ring-fencing wording corrected, lineage claims flagged to-validate, play-back template + carry-forward added). No live query."
 }
 </script>
 <style>
-:root { color-scheme: light dark; --card: light-dark(#ffffff,#111827); --line: light-dark(#e5e7eb,#374151); --muted: light-dark(#6b7280,#9ca3af); }
+:root { color-scheme: light dark; --card: light-dark(#ffffff,#111827); --line: light-dark(#e5e7eb,#374151); --muted: light-dark(#6b7280,#9ca3af); --tv:#b45309; }
 * { box-sizing: border-box; }
-body { font-family: -apple-system, system-ui, Segoe UI, Roboto, sans-serif; max-width: 880px; width:100%; margin:0 auto; padding: clamp(16px,4vw,28px); line-height:1.5; color: light-dark(#1f2937,#e5e7eb); background: light-dark(#f8fafc,#0b1220); }
+body { font-family: -apple-system, system-ui, Segoe UI, Roboto, sans-serif; max-width: 900px; width:100%; margin:0 auto; padding: clamp(16px,4vw,28px); line-height:1.5; color: light-dark(#1f2937,#e5e7eb); background: light-dark(#f8fafc,#0b1220); }
 a { color: light-dark(#2563eb,#60a5fa); }
 .nav { font-size:13px; margin-bottom:18px; }
 .nav a { margin-right:12px; text-decoration:none; }
-.hdr { border-left:8px solid var(--accent); padding:14px 18px; border-radius:10px; background:var(--card); border:1px solid var(--line); border-left-width:8px; margin-bottom:20px; }
+.hdr { border:1px solid var(--line); border-left:8px solid var(--accent); padding:14px 18px; border-radius:10px; background:var(--card); margin-bottom:20px; }
 .hdr .letter { display:inline-block; width:30px; height:30px; line-height:30px; text-align:center; border-radius:50%; background:var(--accent); color:#fff; font-weight:700; margin-right:8px; }
 .hdr h1 { margin:6px 0 2px; font-size:24px; }
 .hdr .role { color:var(--muted); font-size:14px; }
 .hdr .tag { display:inline-block; margin-top:8px; font-size:12px; font-weight:600; color:var(--accent); background:light-dark(#f1f5f9,#1f2937); padding:3px 10px; border-radius:999px; }
 h2 { font-size:16px; text-transform:uppercase; letter-spacing:.04em; margin:26px 0 10px; color: light-dark(#0f172a,#f1f5f9); border-bottom:2px solid var(--accent); padding-bottom:4px; }
+h3 { font-size:14px; margin:16px 0 6px; }
 .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px; }
 .opener { font-style:italic; border-left:4px solid var(--accent); }
 .q { margin:10px 0; padding:10px 12px; border:1px solid var(--line); border-radius:8px; background:var(--card); }
@@ -38,10 +37,14 @@ h2 { font-size:16px; text-transform:uppercase; letter-spacing:.04em; margin:26px
 .q .txt { margin:3px 0; font-weight:600; }
 .q .listen { font-size:13px; color:var(--muted); }
 .q .listen b { color:var(--accent); font-weight:600; }
-.star::before { content:"★ "; color:var(--accent); }
+.star::before { content:"\2605 "; color:var(--accent); }
 .badge { display:inline-block; font-size:10px; font-weight:700; color:#fff; background:var(--accent); border-radius:4px; padding:1px 6px; margin-left:6px; vertical-align:middle; }
+.badge.tv { background:var(--tv); }
 .callout { background:light-dark(#fffbeb,#1f2937); border:1px solid var(--accent); border-radius:10px; padding:12px 16px; }
 .callout .lead { font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); }
+.playback { background:light-dark(#eff6ff,#0f1e33); border:1px dashed var(--accent); border-radius:10px; padding:12px 16px; font-style:italic; }
+.carry { background:light-dark(#f0fdf4,#0f1f17); border:1px solid var(--line); border-left:4px solid #16a34a; border-radius:8px; padding:10px 14px; font-size:14px; }
+.tvnote { color:var(--tv); font-weight:600; font-size:13px; }
 .table-wrap { overflow-x:auto; }
 table { border-collapse:collapse; width:100%; }
 th,td { border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top; font-size:14px; }
@@ -50,46 +53,45 @@ ul.exit { list-style:none; padding:0; }
 ul.exit li { padding:6px 0 6px 26px; position:relative; border-bottom:1px dashed var(--line); }
 ul.exit li::before { content:"\2610"; position:absolute; left:0; color:var(--accent); font-size:18px; line-height:1; }
 .debrief { font-size:14px; }
+.pill { display:inline-block; font-size:11px; font-weight:700; color:#fff; background:var(--accent); border-radius:999px; padding:2px 10px; margin-right:6px; }
 footer { margin-top:30px; font-size:12px; color:var(--muted); border-top:1px solid var(--line); padding-top:10px; }
-@media print { body { background:#fff; } .nav { display:none; } .card,.q,.callout,.hdr { break-inside:avoid; } }
+@media print { body { background:#fff; } .nav { display:none; } .card,.q,.callout,.hdr,.playback,.carry { break-inside:avoid; } }
 
-:root { --accent: #2563eb; }
-.hdr { --accent:#2563eb; }
-</style>
-</head>
-<body>
-<div class="nav"><a href="index.html">&larr; All sheets</a><a href="01-james-obrien.html">O&#x27;Brien</a><a href="02-sarah-mitchell.html">Mitchell</a><a href="03-charlotte-davies.html">Davies</a><a href="04-priya-mehta.html">Mehta</a><a href="06-david-chen.html">Chen</a></div>
-<div class="hdr">
-  <div><span class="letter">C</span><span class="tag">Technology · the coexistence gate</span></div>
-  <h1>Marcus Okafor</h1>
-  <div class="role">Chief Technology Officer</div>
-</div>
+:root { --accent: #2563eb; }</style>
+</head><body>
+<div class="nav"><a href="index.html">&larr; All sheets</a><a href="01-james-obrien.html">O&#x27;Brien</a><a href="02-sarah-mitchell.html">Mitchell</a><a href="03-charlotte-davies.html">Davies</a><a href="04-priya-mehta.html">Mehta</a><a href="06-david-chen.html">Chen</a><a href="07-andrew-harper.html"><b>CFO &starf;</b></a></div>
+<div class="hdr"><div><span class="letter">C</span><span class="tag">Technology · the coexistence gate</span></div>
+<h1>Marcus Okafor</h1><div class="role">Chief Technology Officer</div></div>
 
 <h2>Meeting objective</h2>
-<div class="card">Neutralise the incumbent objection and frame coexistence, not rip-and-replace. Nothing proceeds without his endorsement. Understand his Microsoft politics, his security bar, and the sequencing that lets Charlotte publish on time.</div>
+<div class="card">Neutralise the incumbent objection and frame coexistence on Azure, not rip-and-replace. Nothing proceeds without his endorsement. Understand his Microsoft politics, his security/resilience bar, and the sequencing that lets Charlotte publish on time. Bring a concrete, demoable architecture — this is the weakest &#x27;capability&#x27; slot to strengthen.</div>
 
 <h2>Credibility opener &mdash; say first</h2>
-<div class="card opener">&ldquo;You joined 18 months ago with first-hand platform-evaluation experience, you&#x27;re managing a significant Azure estate, and you want to approve on documented, defensible grounds without a political fight. We&#x27;re not here to argue you out of Microsoft — we want to show where Snowflake coexists with it and gives you a defensible basis to say yes.&rdquo;</div>
+<div class="card opener">&ldquo;You joined 18 months ago with first-hand platform-evaluation experience, you&#x27;re managing a significant Azure estate, and you want to approve on documented, defensible grounds without a political fight. We&#x27;re not here to argue you out of Microsoft — we want to show, concretely, where Snowflake coexists with Azure and gives you a defensible basis to say yes.&rdquo;</div>
 
-<h2>Discovery questions &mdash; pick 5&ndash;7, lead with ★</h2>
-<div class="q"><div class="grp">Defensible</div><div class="txt star">You&#x27;ve run platform evaluations before — what made a decision defensible enough to survive scrutiny here?<span class="badge">LEAD</span></div><div class="listen"><b>Listen for:</b> His bar for &#x27;documented grounds&#x27;.</div></div><div class="q"><div class="grp">Microsoft</div><div class="txt star">How do you want to handle the Microsoft relationship — where does Azure stay, and where is it clearly not solving the lineage problem?<span class="badge">LEAD</span></div><div class="listen"><b>Listen for:</b> The coexistence boundary he can defend.</div></div><div class="q"><div class="grp">Non-negotiables</div><div class="txt">What are your non-negotiables on security, resilience and compliance for anything touching risk data?</div><div class="listen"><b>Listen for:</b> Hard gates to meet head-on.</div></div><div class="q"><div class="grp">Sequencing</div><div class="txt star">What sequencing lets Charlotte publish her reference architecture on time without forcing your hand politically?<span class="badge">LEAD</span></div><div class="listen"><b>Listen for:</b> He explicitly cares about this.</div></div><div class="q"><div class="grp">Evidence</div><div class="txt">What evidence would let you approve — a POC, a peer reference, a security review?</div><div class="listen"><b>Listen for:</b> The path to his endorsement.</div></div>
+<h2>Discovery questions &mdash; pick 5&ndash;7, lead with &starf;</h2>
+<p class="tvnote">&starf; LEAD = ask first &nbsp;·&nbsp; <span style="color:var(--tv)">TO VALIDATE</span> = rests on inference, confirm don't assume</p>
+<div class="q"><div class="grp">Defensible</div><div class="txt star">You&#x27;ve run platform evaluations before — what made a decision defensible enough to survive scrutiny here?<span class="badge">LEAD</span><span class="badge tv">TO VALIDATE</span></div><div class="listen"><b>Listen for:</b> His bar for &#x27;documented grounds&#x27;.</div></div><div class="q"><div class="grp">Microsoft</div><div class="txt star">How do you want to handle the Microsoft relationship — where does Azure stay, and where is Azure-native (Fabric/Synapse) clearly not solving the cross-estate lineage problem?<span class="badge">LEAD</span></div><div class="listen"><b>Listen for:</b> The coexistence boundary he can defend.</div></div><div class="q"><div class="grp">Non-negotiables</div><div class="txt">What are your non-negotiables on security, resilience and compliance for anything touching risk data — private connectivity, key management, region residency?</div><div class="listen"><b>Listen for:</b> Hard gates to meet head-on.</div></div><div class="q"><div class="grp">Sequencing</div><div class="txt star">What sequencing lets Charlotte publish her reference architecture on time without forcing your hand politically?<span class="badge">LEAD</span><span class="badge tv">TO VALIDATE</span></div><div class="listen"><b>Listen for:</b> He explicitly cares about this.</div></div><div class="q"><div class="grp">Evidence</div><div class="txt">What evidence would let you approve — a POC on the retail risk estate, a peer reference, a security review?</div><div class="listen"><b>Listen for:</b> The path to his endorsement.</div></div>
+
+<h2>Play back before you leave</h2>
+<div class="playback">&ldquo;So you&#x27;ll approve on documented, defensible grounds that meet your security and resilience bar, keep Azure where it earns its keep, avoid a Microsoft political fight, and let Charlotte publish on schedule. Get those right and you&#x27;re the endorsement that unlocks it. Right?&rdquo;</div>
 
 <h2>The one takeaway to land</h2>
 <div class="callout"><div class="lead">Leave them believing</div>&ldquo;Snowflake coexists with Azure, meets your security and resilience bar, and gives you a defensible, documented basis to approve.&rdquo;
-<p style="margin:8px 0 0"><b>What to show:</b> Security and governance posture, deployment on Azure, and a coexistence architecture that reduces sprawl rather than adding a silo.</p></div>
+<p style="margin:8px 0 0"><b>What to show (capability mapped):</b> A concrete coexistence architecture diagram: Snowflake deployed in your Azure region, ingesting from the existing estate; ring-fenced estates in separate accounts/roles; private connectivity, customer-managed keys, and Horizon governance across the top. Show the security posture — don&#x27;t assert it.</p></div>
 
 <h2>Objections &amp; responses</h2>
-<div class="table-wrap"><table>
-<thead><tr><th style="width:38%">If they push back&hellip;</th><th>Respond</th></tr></thead>
-<tbody><tr><td>Why add a platform to my Microsoft estate?</td><td>It&#x27;s not additive — it subsumes seven fragmented risk systems into one governed platform that runs on Azure, so you reduce sprawl and finally get single-source lineage.</td></tr><tr><td>This becomes a political fight with Microsoft.</td><td>Coexistence avoids that: Azure stays where it earns its keep, Snowflake is the neutral governed source of truth over the estate. You approve on documented grounds, not a vendor war.</td></tr></tbody>
-</table></div>
+<div class="table-wrap"><table><thead><tr><th style="width:36%">If they push back&hellip;</th><th>Respond</th></tr></thead>
+<tbody><tr><td>Why add a platform to my Microsoft estate?</td><td>It&#x27;s not additive — it consolidates seven fragmented risk systems into one governed platform running on Azure, so you reduce sprawl and finally get cross-estate lineage. Fewer moving parts, not more.</td></tr><tr><td>This becomes a political fight with Microsoft.</td><td>Coexistence avoids that: Azure stays where it earns its keep, Snowflake is the neutral governed source of truth over the estate, deployed in Azure. You approve on documented grounds, not a vendor war.</td></tr><tr><td>Why not just use Azure-native (Fabric/Synapse) or Databricks?</td><td>Fabric/Synapse keep you inside the same fragmented, per-estate pattern that failed the audit; Databricks leads with the lakehouse but governance and cross-estate lineage are add-ons rather than first-class. Snowflake&#x27;s differentiator here is governed lineage across both estates as a native capability — to validate against your own test cases.</td></tr></tbody></table></div>
+
+<h2>Carry forward</h2>
+<div class="carry">Marcus&#x27;s security non-negotiables and evidence bar define the funded-first-step (POC) scope. His coexistence boundary is the backbone of the CFO &#x27;Going Wide&#x27; story. Feed his sequencing need back to Charlotte.</div>
 
 <h2>Exit criteria &mdash; don't leave without</h2>
-<div class="card"><ul class="exit"><li>What makes the decision defensible to him</li><li>The Azure coexistence boundary</li><li>Security/resilience non-negotiables</li><li>Sequencing that unblocks Charlotte</li><li>His evidence bar for endorsement</li></ul></div>
+<div class="card"><ul class="exit"><li>What makes the decision defensible to him</li><li>The Azure coexistence boundary</li><li>Security/resilience non-negotiables</li><li>Sequencing that unblocks Charlotte</li><li>His evidence bar for endorsement (POC scope)</li></ul></div>
 
 <h2>Out-of-role debrief question (the 5 min after)</h2>
-<div class="card debrief">&ldquo;Did we defuse the Microsoft/incumbent tension credibly, or did we sound like we were dismissing his Azure investment?&rdquo;</div>
+<div class="card debrief">&ldquo;Did we defuse the Microsoft/incumbent tension with something concrete, or did we sound like we were dismissing his Azure investment?&rdquo;</div>
 
 <footer>Aldwych Bank &middot; CFO Challenge &middot; persona discovery sheet 5 of 6. Scored 0&ndash;3 on: lead with credibility &middot; discovery &middot; customise to persona &middot; capability mapped to challenge &middot; objection handling.</footer>
-</body>
-</html>
+</body></html>
