@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="snowflake-source" content="cortex-agent-authored">
+<title>Aldwych Bank · Discovery Sheets</title>
+<style>
+:root { color-scheme: light dark; --card: light-dark(#ffffff,#111827); --line: light-dark(#e5e7eb,#374151); --muted: light-dark(#6b7280,#9ca3af); }
+* { box-sizing: border-box; }
+body { font-family: -apple-system, system-ui, Segoe UI, Roboto, sans-serif; max-width: 880px; width:100%; margin:0 auto; padding: clamp(16px,4vw,28px); line-height:1.5; color: light-dark(#1f2937,#e5e7eb); background: light-dark(#f8fafc,#0b1220); }
+a { color: light-dark(#2563eb,#60a5fa); }
+.nav { font-size:13px; margin-bottom:18px; }
+.nav a { margin-right:12px; text-decoration:none; }
+.hdr { border-left:8px solid var(--accent); padding:14px 18px; border-radius:10px; background:var(--card); border:1px solid var(--line); border-left-width:8px; margin-bottom:20px; }
+.hdr .letter { display:inline-block; width:30px; height:30px; line-height:30px; text-align:center; border-radius:50%; background:var(--accent); color:#fff; font-weight:700; margin-right:8px; }
+.hdr h1 { margin:6px 0 2px; font-size:24px; }
+.hdr .role { color:var(--muted); font-size:14px; }
+.hdr .tag { display:inline-block; margin-top:8px; font-size:12px; font-weight:600; color:var(--accent); background:light-dark(#f1f5f9,#1f2937); padding:3px 10px; border-radius:999px; }
+h2 { font-size:16px; text-transform:uppercase; letter-spacing:.04em; margin:26px 0 10px; color: light-dark(#0f172a,#f1f5f9); border-bottom:2px solid var(--accent); padding-bottom:4px; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px; }
+.opener { font-style:italic; border-left:4px solid var(--accent); }
+.q { margin:10px 0; padding:10px 12px; border:1px solid var(--line); border-radius:8px; background:var(--card); }
+.q .grp { font-size:11px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--muted); }
+.q .txt { margin:3px 0; font-weight:600; }
+.q .listen { font-size:13px; color:var(--muted); }
+.q .listen b { color:var(--accent); font-weight:600; }
+.star::before { content:"★ "; color:var(--accent); }
+.badge { display:inline-block; font-size:10px; font-weight:700; color:#fff; background:var(--accent); border-radius:4px; padding:1px 6px; margin-left:6px; vertical-align:middle; }
+.callout { background:light-dark(#fffbeb,#1f2937); border:1px solid var(--accent); border-radius:10px; padding:12px 16px; }
+.callout .lead { font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); }
+.table-wrap { overflow-x:auto; }
+table { border-collapse:collapse; width:100%; }
+th,td { border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top; font-size:14px; }
+th { background:light-dark(#f3f4f6,#1f2937); font-weight:600; }
+ul.exit { list-style:none; padding:0; }
+ul.exit li { padding:6px 0 6px 26px; position:relative; border-bottom:1px dashed var(--line); }
+ul.exit li::before { content:"\2610"; position:absolute; left:0; color:var(--accent); font-size:18px; line-height:1; }
+.debrief { font-size:14px; }
+footer { margin-top:30px; font-size:12px; color:var(--muted); border-top:1px solid var(--line); padding-top:10px; }
+@media print { body { background:#fff; } .nav { display:none; } .card,.q,.callout,.hdr { break-inside:avoid; } }
+
+.pcard { display:flex; gap:14px; align-items:flex-start; text-decoration:none; color:inherit; border:1px solid var(--line); border-left:8px solid var(--accent); border-radius:10px; padding:14px 16px; margin:12px 0; background:var(--card); }
+.pcard:hover { box-shadow:0 2px 10px rgba(0,0,0,.12); }
+.pc-let { flex:0 0 auto; width:34px; height:34px; line-height:34px; text-align:center; border-radius:50%; background:var(--accent); color:#fff; font-weight:700; }
+.pc-name { font-weight:700; font-size:17px; }
+.pc-role { color:var(--muted); font-size:13px; }
+.pc-tag { font-size:12px; font-weight:600; color:var(--accent); margin-top:4px; }
+.pc-slot { font-size:12px; color:var(--muted); margin-top:2px; }
+</style>
+</head>
+<body>
+<div class="hdr" style="--accent:#0f172a; border-left-color:#0f172a">
+  <h1>Aldwych Bank &middot; CFO Challenge</h1>
+  <div class="role">Persona discovery sheets &mdash; walk the floor with questions, not assumptions</div>
+</div>
+<h2>The plan</h2>
+<div class="card">One Finance-owned outcome anchors everything: <b>trusted, auditable regulatory reporting in days not weeks &mdash; satisfying the FCA and BCBS 239 &mdash; without ripping out Azure.</b> Split into two groups; cover three personas before lunch and three after. Open every meeting by establishing credibility, run tight discovery, show one capability that maps to the persona, and land one takeaway.</div>
+<h2>The six stakeholders</h2>
+<a class="pcard" style="--accent:#7c3aed" href="01-james-obrien.html">
+      <div class="pc-let">A</div>
+      <div class="pc-body"><div class="pc-name">James O&#x27;Brien</div>
+      <div class="pc-role">Managing Director, UK Banking Practice · Accenture</div>
+      <div class="pc-tag">Partner · orientation &amp; co-seller</div>
+      <div class="pc-slot">AM · joint · orient first</div></div></a><a class="pcard" style="--accent:#dc2626" href="02-sarah-mitchell.html">
+      <div class="pc-let">B</div>
+      <div class="pc-body"><div class="pc-name">Sarah Mitchell</div>
+      <div class="pc-role">Chief Risk Officer</div>
+      <div class="pc-tag">Business owner · economic sponsor</div>
+      <div class="pc-slot">AM · Group A · sponsor &amp; budget</div></div></a><a class="pcard" style="--accent:#0891b2" href="03-charlotte-davies.html">
+      <div class="pc-let">D</div>
+      <div class="pc-body"><div class="pc-name">Charlotte Davies</div>
+      <div class="pc-role">Head of Group Data Architecture</div>
+      <div class="pc-tag">Technology · the technical gate</div>
+      <div class="pc-slot">AM · Group B · technical gate</div></div></a><a class="pcard" style="--accent:#059669" href="04-priya-mehta.html">
+      <div class="pc-let">F</div>
+      <div class="pc-body"><div class="pc-name">Dr. Priya Mehta</div>
+      <div class="pc-role">Chief Data and AI Officer</div>
+      <div class="pc-tag">Data &amp; AI · AI outcomes + responsible use</div>
+      <div class="pc-slot">PM · Group A · AI outcomes</div></div></a><a class="pcard" style="--accent:#2563eb" href="05-marcus-okafor.html">
+      <div class="pc-let">C</div>
+      <div class="pc-body"><div class="pc-name">Marcus Okafor</div>
+      <div class="pc-role">Chief Technology Officer</div>
+      <div class="pc-tag">Technology · the coexistence gate</div>
+      <div class="pc-slot">PM · Group B · coexistence gate</div></div></a><a class="pcard" style="--accent:#ea580c" href="06-david-chen.html">
+      <div class="pc-let">E</div>
+      <div class="pc-body"><div class="pc-name">David Chen</div>
+      <div class="pc-role">Head of Model Risk Engineering</div>
+      <div class="pc-tag">Data &amp; engineering · ground truth</div>
+      <div class="pc-slot">PM · single · ground truth</div></div></a>
+<footer>Authored from the three briefing PDFs. Persona meetings scored 0&ndash;3 each on five criteria; the CFO meeting on Going High / Going Wide / Going Fast.</footer>
+</body>
+</html>

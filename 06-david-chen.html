@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="snowflake-source" content="cortex-agent-authored">
+<title>Discovery · David Chen</title>
+<script type="application/json" id="snowflake-report-metadata">
+{
+  "generated": "2026-09-17",
+  "intent": "Discovery meeting sheet for David Chen (Head of Model Risk Engineering) \u2014 Aldwych Bank CFO challenge",
+  "dataSources": [
+    {
+      "type": "document",
+      "source": "aldwych_se_briefing.pdf, Office of the CFO Outcome Selling Playbook.PDF, Selling to the Office of the CFO - Field Enablement.PDF"
+    }
+  ],
+  "producerNotes": "Static discovery sheet authored from the three briefing PDFs. No live query; refresh by re-reading the source PDFs."
+}
+</script>
+<style>
+:root { color-scheme: light dark; --card: light-dark(#ffffff,#111827); --line: light-dark(#e5e7eb,#374151); --muted: light-dark(#6b7280,#9ca3af); }
+* { box-sizing: border-box; }
+body { font-family: -apple-system, system-ui, Segoe UI, Roboto, sans-serif; max-width: 880px; width:100%; margin:0 auto; padding: clamp(16px,4vw,28px); line-height:1.5; color: light-dark(#1f2937,#e5e7eb); background: light-dark(#f8fafc,#0b1220); }
+a { color: light-dark(#2563eb,#60a5fa); }
+.nav { font-size:13px; margin-bottom:18px; }
+.nav a { margin-right:12px; text-decoration:none; }
+.hdr { border-left:8px solid var(--accent); padding:14px 18px; border-radius:10px; background:var(--card); border:1px solid var(--line); border-left-width:8px; margin-bottom:20px; }
+.hdr .letter { display:inline-block; width:30px; height:30px; line-height:30px; text-align:center; border-radius:50%; background:var(--accent); color:#fff; font-weight:700; margin-right:8px; }
+.hdr h1 { margin:6px 0 2px; font-size:24px; }
+.hdr .role { color:var(--muted); font-size:14px; }
+.hdr .tag { display:inline-block; margin-top:8px; font-size:12px; font-weight:600; color:var(--accent); background:light-dark(#f1f5f9,#1f2937); padding:3px 10px; border-radius:999px; }
+h2 { font-size:16px; text-transform:uppercase; letter-spacing:.04em; margin:26px 0 10px; color: light-dark(#0f172a,#f1f5f9); border-bottom:2px solid var(--accent); padding-bottom:4px; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px; }
+.opener { font-style:italic; border-left:4px solid var(--accent); }
+.q { margin:10px 0; padding:10px 12px; border:1px solid var(--line); border-radius:8px; background:var(--card); }
+.q .grp { font-size:11px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--muted); }
+.q .txt { margin:3px 0; font-weight:600; }
+.q .listen { font-size:13px; color:var(--muted); }
+.q .listen b { color:var(--accent); font-weight:600; }
+.star::before { content:"★ "; color:var(--accent); }
+.badge { display:inline-block; font-size:10px; font-weight:700; color:#fff; background:var(--accent); border-radius:4px; padding:1px 6px; margin-left:6px; vertical-align:middle; }
+.callout { background:light-dark(#fffbeb,#1f2937); border:1px solid var(--accent); border-radius:10px; padding:12px 16px; }
+.callout .lead { font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); }
+.table-wrap { overflow-x:auto; }
+table { border-collapse:collapse; width:100%; }
+th,td { border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top; font-size:14px; }
+th { background:light-dark(#f3f4f6,#1f2937); font-weight:600; }
+ul.exit { list-style:none; padding:0; }
+ul.exit li { padding:6px 0 6px 26px; position:relative; border-bottom:1px dashed var(--line); }
+ul.exit li::before { content:"\2610"; position:absolute; left:0; color:var(--accent); font-size:18px; line-height:1; }
+.debrief { font-size:14px; }
+footer { margin-top:30px; font-size:12px; color:var(--muted); border-top:1px solid var(--line); padding-top:10px; }
+@media print { body { background:#fff; } .nav { display:none; } .card,.q,.callout,.hdr { break-inside:avoid; } }
+
+:root { --accent: #ea580c; }
+.hdr { --accent:#ea580c; }
+</style>
+</head>
+<body>
+<div class="nav"><a href="index.html">&larr; All sheets</a><a href="01-james-obrien.html">O&#x27;Brien</a><a href="02-sarah-mitchell.html">Mitchell</a><a href="03-charlotte-davies.html">Davies</a><a href="04-priya-mehta.html">Mehta</a><a href="05-marcus-okafor.html">Okafor</a></div>
+<div class="hdr">
+  <div><span class="letter">E</span><span class="tag">Data &amp; engineering · ground truth</span></div>
+  <h1>David Chen</h1>
+  <div class="role">Head of Model Risk Engineering</div>
+</div>
+
+<h2>Meeting objective</h2>
+<div class="card">Get the on-the-ground reality of what&#x27;s really built and tried, validate the pipeline-consolidation story, and win the engineer. Engineers are where the data actually lives — recognise the real work his team does.</div>
+
+<h2>Credibility opener &mdash; say first</h2>
+<div class="card opener">&ldquo;Strategy decks are cheap — you and your team are where the risk data actually lives, and you know what&#x27;s really built, what works, and what&#x27;s been tried. We&#x27;d rather hear the on-the-ground reality from you than assume it, and show you something that ships, not another slide.&rdquo;</div>
+
+<h2>Discovery questions &mdash; pick 5&ndash;7, lead with ★</h2>
+<div class="q"><div class="grp">Reality</div><div class="txt star">Walk us through what actually feeds the risk data today — how many pipelines, what tech, what breaks most?<span class="badge">LEAD</span></div><div class="listen"><b>Listen for:</b> The true state of the estate.</div></div><div class="q"><div class="grp">Toil</div><div class="txt star">How much of your team&#x27;s week is firefighting fragmented legacy pipelines versus building?<span class="badge">LEAD</span></div><div class="listen"><b>Listen for:</b> The maintenance burden to quantify.</div></div><div class="q"><div class="grp">History</div><div class="txt">What&#x27;s been tried to consolidate, and what worked or failed?</div><div class="listen"><b>Listen for:</b> Hidden intel; avoid repeating failures.</div></div><div class="q"><div class="grp">Biggest win</div><div class="txt star">If you could delete one class of toil, what would it be?<span class="badge">LEAD</span></div><div class="listen"><b>Listen for:</b> Where to aim the MVP.</div></div><div class="q"><div class="grp">Tooling</div><div class="txt">What tooling does your team actually like, and what would you refuse to give up?</div><div class="listen"><b>Listen for:</b> Coexist with what works.</div></div>
+
+<h2>The one takeaway to land</h2>
+<div class="callout"><div class="lead">Leave them believing</div>&ldquo;Snowflake collapses your fragmented pipeline maintenance — your team ships instead of firefighting.&rdquo;
+<p style="margin:8px 0 0"><b>What to show:</b> A real pipeline-simplification pattern (dynamic tables / dbt / ingestion); offer a hands-on MVP or hackathon on their actual risk data.</p></div>
+
+<h2>Objections &amp; responses</h2>
+<div class="table-wrap"><table>
+<thead><tr><th style="width:38%">If they push back&hellip;</th><th>Respond</th></tr></thead>
+<tbody><tr><td>Strategy talk is cheap — what actually ships?</td><td>Fair — so let&#x27;s not talk strategy. We&#x27;ll show a working pipeline pattern and propose a hands-on MVP on your real data this cycle, with your team in the room.</td></tr><tr><td>Another migration just means more work for us.</td><td>Net reduction, done incrementally alongside what you run today — the point is fewer pipelines to maintain, not a big-bang cutover.</td></tr></tbody>
+</table></div>
+
+<h2>Exit criteria &mdash; don't leave without</h2>
+<div class="card"><ul class="exit"><li>A real pipeline inventory (count + tech)</li><li>The maintenance-burden share of the week</li><li>What&#x27;s been tried to consolidate</li><li>The biggest class of toil to target</li><li>Tooling must-keeps — and his buy-in</li></ul></div>
+
+<h2>Out-of-role debrief question (the 5 min after)</h2>
+<div class="card debrief">&ldquo;Did we earn an engineer&#x27;s respect and recognise the real work — or did we sound like another strategy pitch?&rdquo;</div>
+
+<footer>Aldwych Bank &middot; CFO Challenge &middot; persona discovery sheet 6 of 6. Scored 0&ndash;3 on: lead with credibility &middot; discovery &middot; customise to persona &middot; capability mapped to challenge &middot; objection handling.</footer>
+</body>
+</html>
